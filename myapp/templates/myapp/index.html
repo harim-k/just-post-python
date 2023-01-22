@@ -1,0 +1,139 @@
+<html>
+
+<head>
+    <title>just post</title>
+    <meta name="naver-site-verification" content="f8c5c5b9b4901ef43322866f04db422ab521f552" />
+</head>
+
+<body style="margin-top: 30px;margin-left: 30px;">
+    <p>택배 예약</p>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" title="Upload excel file" name="excel_file" style="border: 1px solid black; padding: 5px;"
+            required="required">
+
+        <p></p>
+
+        <input type="radio" name="store_type" value="네이버" checked>네이버 
+        <input type="radio" name="store_type" value="쿠팡">쿠팡
+        <input type="radio" name="store_type" value="에이블리">에이블리
+
+        <p></p>
+        
+        <input type="submit" value="엑셀 파일 업로드" formaction="{% url 'myapp:make_post_excel_file' %}"
+            style="border: 1px solid green; padding:5px; border-radius: 2px; cursor: pointer;">
+    </form>
+
+
+
+    <p></p>
+
+    <a href="{% url 'myapp:download_gs_post_excel_file' %}"
+        style="border: 1px solid green; padding:5px; border-radius: 2px; cursor: pointer;">
+        gs 대량발송 엑셀 파일 다운로드
+    </a>
+
+    <a href="{% url 'myapp:download_cu_post_excel_file' %}"
+        style="border: 1px solid green; padding:5px; border-radius: 2px; cursor: pointer;">
+        cu 대량발송 엑셀 파일 다운로드
+    </a>
+
+    <p></p>
+
+    <hr>
+
+    {% for row in post_excel_data %}
+    {% for cell in row %}
+    {{ cell }}&nbsp;&nbsp;
+    {% endfor %}
+    <br>
+    {% endfor %}
+
+    <p></p>
+    <hr>
+    <p></p>
+    <p></p>
+    <p></p>
+
+    <p>발송 처리</p>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" title="Upload excel file" name="excel_file" style="border: 1px solid black; padding: 5px;"
+            required="required">
+            
+        <p></p>
+
+        <input type="radio" name="store_type" value="네이버" checked>네이버 
+        <input type="radio" name="store_type" value="쿠팡">쿠팡
+        <input type="radio" name="store_type" value="에이블리">에이블리
+        
+        <p></p>
+
+        <textarea id="after_post_data" name="after_post_data" rows="10" cols="50" placeholder="송장번호 정보 입력"></textarea>
+        <p></p>
+
+        <input type="submit" value="엑셀 파일 업로드" formaction="{% url 'myapp:make_after_post_excel_file' %}"
+            style="border: 1px solid green; padding:5px; border-radius: 2px; cursor: pointer;">
+    </form>
+
+
+
+    <a href="{% url 'myapp:download_naver_after_post_excel_file' %}"
+        style="border: 1px solid green; padding:5px; border-radius: 2px; cursor: pointer;">
+        네이버 발송처리 엑셀 파일 다운로드
+    </a>
+    <a href="{% url 'myapp:download_coupang_after_post_excel_file' %}"
+        style="border: 1px solid green; padding:5px; border-radius: 2px; cursor: pointer;">
+        쿠팡 발송처리 엑셀 파일 다운로드
+    </a>
+    <a href="{% url 'myapp:download_ably_after_post_excel_file' %}"
+        style="border: 1px solid green; padding:5px; border-radius: 2px; cursor: pointer;">
+        에이블리 발송처리 엑셀 파일 다운로드
+    </a>
+
+    <p></p>
+
+
+    <hr>
+
+    {% for row in after_post_excel_data %}
+    {% for cell in row %}
+    {{ cell }}&nbsp;&nbsp;
+    {% endfor %}
+    <br>
+    {% endfor %}
+
+    <p></p>
+
+    <hr>
+
+
+    <p>엑셀 파일 합치기</p>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" title="Upload excel file" name="excel_file" style="border: 1px solid black; padding: 5px;"
+            required="required" multiple>
+        <p></p>
+        <input type="submit" value="합친 엑셀 파일 다운로드" formaction="{% url 'myapp:merge_post_excel_file' %}"
+            style="border: 1px solid green; padding:5px; border-radius: 2px; cursor: pointer;">
+    </form>
+
+    <p></p>
+
+    <hr>
+
+    <p></p>
+    <hr>
+    <p></p>
+    <p></p>
+    <p></p>
+</body>
+
+</html>
+
+
+
+

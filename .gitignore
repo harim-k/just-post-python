@@ -1,0 +1,11 @@
+*.xls
+*.xlsx
+*.pem
+*.pyc
+ssh.sh
+
+
+!static/*
+!test/*
+
+__pycache__
