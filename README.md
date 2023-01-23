@@ -1,6 +1,6 @@
 # just-post
 ## http://just-post.shop/
-### upload customer excel file and download post excel file
+### upload order excel file and download post excel file
 #### 네이버, 쿠팡, 에이블리
 
 
