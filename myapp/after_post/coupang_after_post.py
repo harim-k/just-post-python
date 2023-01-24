@@ -97,4 +97,4 @@ def get_first_row_from_template():
 
 
 def download_excel_file():
-    return utils.download_excel_file('coupang_after_post', 'xlsx')
+    return utils.download_excel_file('쿠팡_발송처리', 'xlsx')

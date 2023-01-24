@@ -89,4 +89,4 @@ def get_first_row_from_template():
 
 
 def download_excel_file():
-    return utils.download_excel_file('naver_after_post', 'xls')
+    return utils.download_excel_file('네이버_발송처리', 'xls')

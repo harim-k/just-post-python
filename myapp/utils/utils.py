@@ -4,7 +4,7 @@ import pytz
 import io
 import msoffcrypto
 from openpyxl import load_workbook
-
+import urllib
 import pandas as pd
 
 from django.http import HttpResponse
@@ -31,10 +31,10 @@ def download_after_post_excel_file(new_filename, extension):
 def download_excel_file(origin_filename, extension):
     with open(f'{origin_filename}.{extension}', 'rb') as f:
         filename = f'{origin_filename}_{get_today()}.{extension}'
+        filename = urllib.parse.quote(filename.encode('utf-8'))
 
         response = HttpResponse(f, content_type='application/ms-excel')
-        response['Content-Disposition'] = f'attachment; filename={filename}'
-
+        response['Content-Disposition'] = f'attachment; filename*=UTF-8\'\'{filename}'
     return response
 
 

@@ -82,4 +82,4 @@ def get_first_row_from_template():
 
 
 def download_excel_file():
-    return utils.download_excel_file('ably_after_post', 'xlsx')
+    return utils.download_excel_file('에이블리_발송처리', 'xlsx')
