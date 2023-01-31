@@ -34,10 +34,10 @@ class YourTestClass(TestCase):
 
     def post_test(self, store_type):
         # given
-        gs_excel_file = 'gs_post.xls'
-        cu_excel_file = 'cu_post.xlsx'
+        gs_excel_file = 'gs_대량발송.xls'
+        cu_excel_file = 'cu_대량발송.xlsx'
 
-        order_excel_file = f'test/{store_type}_orders.xlsx'
+        order_excel_file = f'test/{store_type}_주문.xlsx'
         output_gs_excel_file = f'test/{store_type}_{gs_excel_file}'
         output_cu_excel_file = f'test/{store_type}_{cu_excel_file}'
 
@@ -76,7 +76,7 @@ class YourTestClass(TestCase):
         sheet_index = 1 if store_type == '에이블리' else 0
 
         택배발송정보 = f'test/{store_type}_택배발송정보'
-        order_excel_file = f'test/{store_type}_orders.xlsx'
+        order_excel_file = f'test/{store_type}_주문.xlsx'
         expected_excel_file = f'test/{store_type}_발송처리.{extension}'
         actual_excel_file = f'{store_type}_발송처리.{extension}'
 

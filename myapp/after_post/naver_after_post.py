@@ -78,7 +78,7 @@ def make_excel_row_data(sheet, 택배발송정보_dict, index):
 
 def get_first_row_from_template():
     row_data = list()
-    workbook = load_workbook(filename="static/naver_after_post_template.xlsx")
+    workbook = load_workbook(filename="static/네이버_발송처리_템플릿.xlsx")
 
     # set first row from template
     for row in workbook.worksheets[0].values:

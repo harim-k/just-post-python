@@ -17,7 +17,7 @@ def get_택배발송정보(post_data_string):
 
 
 def get_first_row_from_template():
-    workbook = load_workbook(filename='static/cu_post_template.xlsx')
+    workbook = load_workbook(filename='static/cu_대량발송_템플릿.xlsx')
     row_data = list()
 
     for row in workbook.worksheets[0].values:
@@ -28,8 +28,8 @@ def get_first_row_from_template():
 
 
 def save_as_excel_file(post_excel_data):
-    utils.save_as_excel_file(post_excel_data, 'cu_post.xlsx')
+    utils.save_as_excel_file(post_excel_data, 'cu_대량발송.xlsx')
 
 
 def download_post_excel_file(request):
-    return utils.download_excel_file('cu_post', 'xlsx')
+    return utils.download_excel_file('cu_대량발송', 'xlsx')

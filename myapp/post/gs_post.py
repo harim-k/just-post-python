@@ -20,7 +20,7 @@ def get_택배발송정보(post_data_string):
 
 
 def get_first_row_from_template():
-    workbook = load_workbook(filename='static/gs_post_template.xlsx')
+    workbook = load_workbook(filename='static/gs_대량발송_템플릿.xlsx')
     row_data = list()
 
     for row in workbook.worksheets[0].values:
@@ -31,8 +31,8 @@ def get_first_row_from_template():
 
 
 def save_as_excel_file(post_excel_data):
-    utils.save_as_excel_file(post_excel_data, 'gs_post.xls')
+    utils.save_as_excel_file(post_excel_data, 'gs_대량발송.xls')
 
 
 def download_post_excel_file(request):
-    return utils.download_excel_file('gs_post', 'xls')
+    return utils.download_excel_file('gs_대량발송', 'xls')

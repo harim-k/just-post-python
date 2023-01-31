@@ -71,7 +71,7 @@ def make_excel_row_data(sheet, 택배발송정보_dict, row_index):
 def get_first_row_from_template():
     row_data = list()
     workbook = load_workbook(
-        filename="static/ably_after_post_template.xlsx")
+        filename="static/에이블리_발송처리_템플릿.xlsx")
 
     # set first row from template
     for row in workbook.worksheets[1].values:
