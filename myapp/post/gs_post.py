@@ -8,7 +8,7 @@ def get_택배발송정보(post_data_string):
     strings = post_data_string.replace('\r\n', '')
     strings = strings.replace('\n', '')
     strings = strings.split('수신정보')[1]
-    strings= strings.split('선불')[:-1]
+    strings = strings.split('선불')[:-1]
 
     delimeter = '반품' if '반품' in strings[0] else 'Address'  # 사업자 계정 유무에 따라 다름
 
